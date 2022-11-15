@@ -1,7 +1,28 @@
+import { EmployeInfoComponent } from './modules/employe-info/employe-info.component';
+import { DesignationEntryComponent } from './modules/designation-entry/designation-entry.component';
+import { DepartmentEntryComponent } from './modules/department-entry/department-entry.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent
+  },
+  {
+    path: '1',
+    component: DepartmentEntryComponent
+  },
+  {
+    path: '2',
+    component: DesignationEntryComponent
+  },
+  {
+    path: '3',
+    component: EmployeInfoComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
