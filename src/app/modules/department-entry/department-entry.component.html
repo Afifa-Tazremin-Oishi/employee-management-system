@@ -1,6 +1,6 @@
 
 <div class="container" style="margin-top: 3rem;">
-    <div class="card">
+    <div class="card no-print">
       <div class="card-body">
         <h5>Department Entry</h5>
         <form [formGroup]="addDepartmentForm" (ngSubmit)="submitAction()">
@@ -48,9 +48,9 @@
           <div class="row" style="margin-top: 1rem">
             <div class="col"></div>
             <div class="col">
-              <button type="submit" class="btn btn-primary">Submit</button
+              <button type="submit" class="btn btn-sm btn-primary">Submit</button
               >&nbsp;&nbsp;
-              <button type="button" class="btn btn-primary">Show</button>
+              <button type="button" class="btn btn-sm btn-primary" (click)="print()">Report</button>
             </div>
             <div class="col"></div>
           </div>
@@ -68,38 +68,39 @@
             <th scope="col">Code</th>
             <th scope="col">Full Name</th>
             <th scope="col">Department</th>
-            <th scope="col" class="text-center">Action</th>
+            <th scope="col" class="text-center no-print">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of empList | paginate: { itemsPerPage: 5, currentPage: p }">
+          <tr *ngFor="let item of empList">
             <th scope="row">{{ item.code }}</th>
             <!-- <th scope="row">{{ item.code }}</th> -->
             <td>{{ item.name }}</td>
             <td>{{ item.dept }}</td>
   
-            <td class="text-center">
+            <td class="text-center no-print">
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-sm btn-primary"
                 (click)="openPopup(item)"
               >
                 Edit</button
               >&nbsp;&nbsp;
   
-              <button class="btn btn-danger" (click)="deleteAction(item)">
+              <!-- <button class="btn btn-sm btn-danger" (click)="deleteAction(item)">
                 Delete
-              </button>
-              <!-- <button  class="btn btn-danger" (click)="DeleteEmployeeInformation(item.code)" >Delete</button> -->
+              </button> -->
+              <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)">Delete</button>
             </td>
           </tr>
         </tbody>
       </table><br>
-      <pagination-controls (pageChange)="p = $event" style="text-align: center;"></pagination-controls>
+      <!-- <pagination-controls (pageChange)="p = $event" style="text-align: center;" class="no-print"></pagination-controls> -->
     </div>
   </div>
   <div
     class="modal"
+    
     tabindex="-1"
     role="dialog"
     [ngStyle]="{ display: displayStyle }"

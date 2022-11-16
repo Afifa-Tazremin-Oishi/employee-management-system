@@ -18,18 +18,32 @@ export class DepartmentService {
  updateDept(requestBody: any) {
   return this.http.patch('http://localhost:8000/updateemployee', requestBody);
 }
-deleteDept(requestBody: any){
-  return this.http.delete('http://localhost:8000/deleteemployee', requestBody);
-}
+// deleteDept(requestBody: any){
+//   return this.http.delete('http://localhost:8000/deleteemployee', requestBody);
+// }
 
-BookDelete (requestBody:number):Observable<number>{
-  let httpheaders=new HttpHeaders()
-  .set('Content-type','application/Json');
-  let options={
-    headers:httpheaders,
+
+
+// delete(requestBody: any){
+//   let httpheaders=new HttpHeaders()
+//   .set('Content-type','application/Json');
+//   let options={
+//     headers:httpheaders,
+//     body: requestBody
+//   };
+//   return this.http.delete<number>('http://localhost:8000/deleteemployee', options);
+// }
+
+delete(requestBody: any) {
+  const headerOption2 = {
+    headers: new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+      }
+    ),
     body: requestBody
   };
-  return this.http.delete<number>('http://localhost:8000/deleteemployee', options);
+  return this.http.delete('http://localhost:8000/deleteemployee', headerOption2);
 }
 
 }

@@ -8,3 +8,9 @@
     margin-bottom: 10px; /* Added */
     width: 45rem;
 }
+
+@media print {
+    .no-print{
+        display: none;
+    }
+}

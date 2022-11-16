@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DepartmentService } from './department.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-department-entry',
@@ -31,7 +32,8 @@ export class DepartmentEntryComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private deptService: DepartmentService) { }
+    private deptService: DepartmentService,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getAll();
@@ -101,40 +103,34 @@ export class DepartmentEntryComponent implements OnInit {
       this.empList = res.payload.output;
     })
   }
-  // deleteAction(data: any){
-  //   //this.data = item;
-  //   //console.log(item);
-  //   this.deptService.BookDelete(this.data).subscribe((res: any) => {
-  //     console.log(res);
-  //     Swal.fire('Deleted!', 'Record has been deleted.', 'success')
-  //   })
-  // }
-
-
-  deleteAction(item: any) {
-    console.log(item);
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-       this.deptService.deleteDept(item)
-          .subscribe(
-            (res: any) => {
-              Swal.fire('Deleted!', 'Record has been deleted.', 'success');
-              this.getAll();
-            },
-          );
-      }else {
-        Swal.fire('ERROR', 'Id did not valid', 'error');
-      }
-    })
+  print(){
+    window.print();
   }
-
-
+  deleteAction(code:any){
+    console.log('sss'+ code)
+    Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            let requestBody = {
+              code: code
+            }
+           this.deptService.delete(requestBody)
+              .subscribe(
+                (res: any) => {
+                  Swal.fire('Deleted!', 'Record has been deleted.', 'success');
+                  this.getAll();
+                },
+              );
+          }else {
+            Swal.fire('ERROR', 'Id did not valid', 'error');
+          }
+        })
+  }
 }
