@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 3rem">
+<div class="w3-container" style="margin-top: 3rem">
   <div class="card">
     <div class="card-body">
       <h5>Employee Information</h5>
@@ -7,7 +7,7 @@
         <div class="col-4">
           <div class="row">
             <div class="col-5">
-              <label style="font-size: 14px ;">Employee Code:</label>
+              <label style="font-size: 14px">Employee Code:</label>
             </div>
             <div class="col">
               <input
@@ -22,7 +22,7 @@
         <div class="col-3">
           <div class="row">
             <div class="col-2" style="margin-left: -2rem">
-              <label style="font-size: 14px ;">Serial:</label>
+              <label style="font-size: 14px">Serial:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -32,10 +32,14 @@
         <div class="col-5">
           <div class="row">
             <div class="col-3">
-              <label style="font-size: 14px ;">Department:</label>
+              <label style="font-size: 14px">Department:</label>
             </div>
             <div class="col">
-              <select style="font-size: 14px ;" class="form-select" formControlName="dept">
+              <select
+                style="font-size: 14px"
+                class="form-select"
+                formControlName="dept"
+              >
                 <option [selected]="true">Select Department:</option>
                 <option value="HRDept">HRDept</option>
                 <option value="Designation">Manager</option>
@@ -50,7 +54,7 @@
         <div class="col">
           <div class="row">
             <div class="col-2">
-              <label style="font-size: 14px ;">Name:</label>
+              <label style="font-size: 14px">Name:</label>
             </div>
             <div class="col-10">
               <input
@@ -63,7 +67,7 @@
           </div>
         </div>
         <div class="col-2">
-          <button style="font-size: 14px ;">Search</button>
+          <button style="font-size: 14px">Search</button>
         </div>
       </div>
       <br />
@@ -71,10 +75,14 @@
         <div class="col-5">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;">Designation:</label>
+              <label style="font-size: 14px">Designation:</label>
             </div>
-            <div style="font-size: 14px ;" class="col" style="margin-left: -2rem">
-              <select style="font-size: 14px ;" class="form-select" formControlName="dept">
+            <div style="font-size: 14px" class="col" style="margin-left: -2rem">
+              <select
+                style="font-size: 14px"
+                class="form-select"
+                formControlName="dept"
+              >
                 <option [selected]="true">Select Department:</option>
                 <option value="HRDept">HRDept</option>
                 <option value="Designation">Manager</option>
@@ -86,10 +94,14 @@
         <div class="col-4">
           <div class="row">
             <div class="col-3">
-              <label style="font-size: 14px ;" >Grade:</label>
+              <label style="font-size: 14px">Grade:</label>
             </div>
             <div class="col">
-              <select style="font-size: 14px ;" class="form-select" formControlName="dept">
+              <select
+                style="font-size: 14px"
+                class="form-select"
+                formControlName="dept"
+              >
                 <option [selected]="true">Select Department:</option>
                 <option value="HRDept">HRDept</option>
                 <option value="Designation">Manager</option>
@@ -105,7 +117,7 @@
         <div class="col-5">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Acc.No:</label>
+              <label style="font-size: 14px">Acc.No:</label>
             </div>
             <div class="col" style="margin-left: -2rem">
               <input type="text" formControlName="name" class="form-control" />
@@ -115,7 +127,7 @@
         <div class="col-4">
           <div class="row">
             <div class="col-3">
-              <label style="font-size: 14px ;" >TIN#:</label>
+              <label style="font-size: 14px">TIN#:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -129,10 +141,18 @@
         <div class="col">
           <div class="row">
             <div class="col-2">
-              <label style="font-size: 14px ;" >Salary Bank:</label>
+              <label style="font-size: 14px">Salary Bank:</label>
             </div>
-            <div style="font-size: 14px ;"  class="col-10" style="margin-left: -2rem">
-              <select style="font-size: 14px ;"  class="form-select" formControlName="dept">
+            <div
+              style="font-size: 14px"
+              class="col-10"
+              style="margin-left: -2rem"
+            >
+              <select
+                style="font-size: 14px"
+                class="form-select"
+                formControlName="dept"
+              >
                 <option [selected]="true">Select Department</option>
                 <option value="HRDept">HRDept</option>
                 <option value="Designation">Manager</option>
@@ -148,7 +168,7 @@
         <div class="col">
           <div class="row">
             <div class="col">
-              <label style="font-size: 14px ;" >Join Date:</label>
+              <label style="font-size: 14px">Join Date:</label>
             </div>
             <div class="col-8" style="margin-left: -2rem">
               <input type="date" formControlName="name" class="form-control" />
@@ -158,20 +178,20 @@
         <div class="col">
           <div class="row">
             <div class="col-3">
-              <label style="font-size: 14px ;" >Probation:</label>
+              <label style="font-size: 14px">Probation:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
             </div>
             <div class="col" style="margin-left: -1rem">
-              <label style="font-size: 14px ;" >Month</label>
+              <label style="font-size: 14px">Month</label>
             </div>
           </div>
         </div>
         <div class="col" style="margin-left: -2rem">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Confirm Date:</label>
+              <label style="font-size: 14px">Confirm Date:</label>
             </div>
             <div class="col">
               <input type="date" formControlName="name" class="form-control" />
@@ -184,7 +204,7 @@
         <div class="col-3">
           <div class="row">
             <div class="col">
-              <label style="font-size: 14px ;" >Consolidated:</label>
+              <label style="font-size: 14px">Consolidated:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -195,7 +215,7 @@
         <div class="col-3">
           <div class="row">
             <div class="col-2">
-              <label style="font-size: 14px ;" >CPF:</label>
+              <label style="font-size: 14px">CPF:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -208,7 +228,7 @@
         <div class="col">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Basic Salary:</label>
+              <label style="font-size: 14px">Basic Salary:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -218,9 +238,13 @@
         <div class="col">
           <div class="row">
             <div class="col-5">
-              <div class="form-check" style="font-size: 14px ;" >
-                <input style="font-size: 14px ;" class="form-check-input" type="checkbox" value="" />House
-                Rent
+              <div class="form-check" style="font-size: 14px">
+                <input
+                  style="font-size: 14px"
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                />House Rent
               </div>
             </div>
             <div class="col">
@@ -238,7 +262,7 @@
         <div class="col">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Income Tax:</label>
+              <label style="font-size: 14px">Income Tax:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -246,12 +270,12 @@
           </div>
         </div>
       </div>
-      <br>
+      <br />
       <div class="row">
         <div class="col">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Dareness:</label>
+              <label style="font-size: 14px">Dareness:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -261,12 +285,21 @@
         <div class="col">
           <div class="row">
             <div class="col-5">
-              <div class="form-check" style="font-size: 14px ;" >
-                <input style="font-size: 14px ;" class="form-check-input" type="checkbox" value="" />Special Allow
+              <div class="form-check" style="font-size: 14px">
+                <input
+                  style="font-size: 14px"
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                />Special Allow
               </div>
             </div>
             <div class="col">
-              <input type="number" formControlName="name" class="form-control" />
+              <input
+                type="number"
+                formControlName="name"
+                class="form-control"
+              />
             </div>
             <div class="col">
               <input type="text" formControlName="text" class="form-control" />
@@ -276,7 +309,7 @@
         <div class="col">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;" >Special DA:</label>
+              <label style="font-size: 14px">Special DA:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -284,12 +317,12 @@
           </div>
         </div>
       </div>
-      <br>
+      <br />
       <div class="row">
         <div class="col">
           <div class="row">
             <div class="col-5">
-              <label style="font-size: 14px ;">Provident Fund:</label>
+              <label style="font-size: 14px">Provident Fund:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -300,10 +333,15 @@
           <div class="row">
             <div class="col-5">
               <div class="form-check">
-                <input style="font-size: 14px ;" class="form-check-input" type="checkbox" value="" />Arrear:
+                <input
+                  style="font-size: 14px"
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                />Arrear:
               </div>
             </div>
-            
+
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
             </div>
@@ -312,7 +350,7 @@
         <div class="col">
           <div class="row">
             <div class="col-5">
-              <label style="font-size: 14px ;">Binder WF:</label>
+              <label style="font-size: 14px">Binder WF:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -322,7 +360,7 @@
         <div class="col">
           <div class="row">
             <div class="col-4">
-              <label style="font-size: 14px ;">Incentive Bonus:</label>
+              <label style="font-size: 14px">Incentive Bonus:</label>
             </div>
             <div class="col">
               <input type="text" formControlName="name" class="form-control" />
@@ -338,46 +376,144 @@
           <div style="margin-top: 2rem"></div>
 
           <div class="row">
-                <div class="col-1">
-                  <label style="font-size: 14px ;">Conveyance&nbsp;:</label>
-                </div>
-                <div class="col-2" style="margin-left: 14px;">
-                  <input
-                    type="text"
-                    formControlName="name"
-                    class="form-control"/>
-                </div>
-              
-                <div class="col-1">
-                  <label style="font-size: 14px ;">Medical&nbsp;:</label>
-                </div>
-                <div class="col-2">
-                  <input type="text" formControlName="name" class="form-control" />
-                </div>
-              
+            <div class="col-1">
+              <label>Conveyance:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label>Medical:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label
+                >Other Allow:</label
+              >
+            </div>
+            <div class="col-1">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label 
+                >Extra Allow:</label
+              >
+            </div>
+            
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-1">
+              <label style="font-size: 14px">Technical&nbsp;:</label>
+            </div>
+            <div class="col-2" style="margin-left: 14px">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label style="font-size: 14px">Mobile:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label 
+                >Publisher's Salary:</label
+              >
+            </div>
+            <div class="col-1">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label 
+                >Business:</label
+              >
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+          </div>
+
+          
+          <br>
+          <div class="row">
+            <div class="col-1">
+              <label style="font-size: 14px">Charge:</label>
+            </div>
+            <div class="col-2" style="margin-left: 14px">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label style="font-size: 14px">Eye Allowance:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
+            <div class="col-1">
+              <label style="font-size: 14px; white-space: nowrap"
+                >Co.Secretary:</label
+              >
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+
            
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-1">
+              <label >Car&nbsp;:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+            <div class="col-1">
+              <label>LeaserRent&nbsp;:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+            <div class="col"></div>
+            <div class="col-2" style="margin-right: -5rem">
+              <label>Gross Salary:</label>
+            </div>
+            <div class="col-2">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
             
-              
-                <div class="col-1">
-                  <label style="font-size: 14px ; white-space: nowrap;">Other Allow&nbsp;:</label>
-                </div>
-                <div class="col-1">
-                  <input type="text" formControlName="name" class="form-control" />
-                </div>
-            
-                  
-                    <div class="col-1" >
-                      <label style="font-size: 14px; white-space: nowrap;">Extra Allow&nbsp;:</label>
-                    </div>
-                    <div class="col-2">
-                      <input type="text" formControlName="name" class="form-control" />
-                    </div>
-                 
-              
-              
-              
-            
-    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 3rem">
+      <div class="card">
+        <div class="card-body">
+          <h5>Personal Details</h5>
+          <div style="margin-top: 2rem"></div>
+          <div class="row">
+            <div class="col-1">
+              <label style="font-size: 14px">Edu Quali&nbsp;:</label>
+            </div>
+            <div class="col-2" style="margin-left: 14px">
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+          </div>
+      </div>
+      </div>
   </div>
-  
 </div>

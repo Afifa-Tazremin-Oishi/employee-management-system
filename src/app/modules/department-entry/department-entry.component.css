@@ -3,10 +3,8 @@
     margin-bottom: 2rem;
 }
 .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
-    width: 45rem;
+    float: right; /* Added */
+    width: 75rem;
 }
 
 @media print {

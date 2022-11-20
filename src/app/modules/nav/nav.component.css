@@ -4,3 +4,7 @@
 .nav-link{
     color: white;
 }
+.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+    color: #fff!important;
+    background-color: #05443c!important;
+}

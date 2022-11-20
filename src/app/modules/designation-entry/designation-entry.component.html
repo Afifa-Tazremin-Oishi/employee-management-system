@@ -1,8 +1,8 @@
-<div class="container" style="margin-top: 3rem;">
+<div class="w3-container" style="margin-top: 3rem;">
     <div class="card">
       <div class="card-body">
         <h5>Designation Entry</h5>
-        <form>
+        <form [formGroup]="addDesignation" (ngSubmit)="submitAction()">
           <div class="row" style="margin-top: 2rem">
             <div class="col-2">
               <label class="">Code:</label>
@@ -23,7 +23,7 @@
             <div class="col-5">
               <input
                 type="text"
-                formControlName="name"
+                formControlName="designation"
                 class="form-control"
                 placeholder="Designation"
               />
@@ -37,7 +37,7 @@
             <div class="col-5">
               <input
                 type="text"
-                formControlName="name"
+                formControlName="sdesignation"
                 class="form-control"
                 placeholder="Short Designation"
               />
@@ -46,16 +46,91 @@
           </div>
           <div class="row" style="margin-top: 3rem">
             <div class="col text-center">
-              <button type="button" class="btn btn-success">Save</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-info">Report</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-secondary">Close</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-warning">Cancle</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="submit" class="btn btn-success">Save</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-info">Report</button>
+          
+              <!-- <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-danger">Delete</button> -->
             </div>
           </div>
         </form>
       </div>
     </div>
+    <div class="content" style="margin-top: 2rem">
+    <table
+      class="table table-bordered"
+      style="width: 75rem; float: right; margin-top: 4rem"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Designation</th>
+          <th scope="col">Short Desig</th>
+          <th scope="col" class="text-center no-print">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td class="text-center no-print">
+            <button type="button" class="btn btn-sm btn-primary" (click)="openPopup()">Edit</button>&nbsp;&nbsp;
+            <button  class="btn btn-sm btn-danger" >Delete</button>
+            </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td class="text-center no-print">
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              (click)="openPopup()"
+            >
+              Edit</button
+            >&nbsp;&nbsp;
+            <button  class="btn btn-sm btn-danger" >Delete</button>
+            </td>
+        </tr>
+        
+      </tbody>
+    </table><br>
   </div>
-  
+  </div>
+  <div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit</h4>
+      </div>
+      <form [formGroup]="editDesignation">
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Designation</label>
+          <input type="text" class="form-control" formControlName="designation">
+        </div>
+        <div class="form-group">
+          <label>Short Designation</label>
+          <input type="text" class="form-control" formControlName="sdesignation">
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <br>
+    </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
