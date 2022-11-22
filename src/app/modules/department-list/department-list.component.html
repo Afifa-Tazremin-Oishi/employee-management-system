@@ -1,0 +1,94 @@
+<div class="w3-container w3-teal no-print">
+    <h1>Department Entry</h1>
+    
+  </div> 
+<div class="w3-container" style="margin-top: 1rem;">
+    <button type="buttton" class="btn btn-primary no-print" routerLink="dept-entry">Add Department</button>
+    <table
+      class="table table-bordered"
+      style="margin-top: 1rem;"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Department Name</th>
+          <th scope="col" class="text-center no-print">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of empList">
+          <th scope="row">{{ item.code }}</th>
+          <!-- <th scope="row">{{ item.code }}</th> -->
+          <td>{{ item.dept }}</td>
+
+          <td class="text-center no-print">
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              (click)="openPopup(item)"
+            >
+              Edit</button
+            >&nbsp;&nbsp;
+
+            <!-- <button class="btn btn-sm btn-danger" (click)="deleteAction(item)">
+              Delete
+            </button> -->
+            <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table><br>
+    <div class="text-center">
+        <button type="button" class="btn btn-primary no-print" (click)="print()">Print</button>
+    </div>
+    <!-- <pagination-controls (pageChange)="p = $event" style="text-align: center;" class="no-print"></pagination-controls> -->
+  </div>
+  <div
+  class="modal"
+  
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{ display: displayStyle }"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Department</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editDepartmentForm"(ngSubmit)="updateMenu()">
+          <div class="row">
+            <div class="col-3">
+              <label class="required">Department</label>
+            </div>
+            <div class="col-9">
+              <!-- <select
+                class="form-select"
+                formControlName="dept"
+                (change)="selectChangeHandler($event)"
+              >
+                <option [selected]="true">Select Department</option>
+              
+              </select> -->
+              <input
+              type="text"
+              formControlName="dept"
+              class="form-control"
+              placeholder="Enter department name"
+            />
+            </div>
+          </div>
+          <br />
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

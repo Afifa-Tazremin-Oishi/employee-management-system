@@ -1,25 +1,26 @@
-
+<div class="w3-container w3-teal no-print">
+  <h1>Department Entry</h1>
+  
+</div> 
 <div class="w3-container" style="margin-top: 3rem;">
     <div class="card no-print">
       <div class="card-body">
         <h5>Department Entry</h5>
         <form [formGroup]="addDepartmentForm" (ngSubmit)="submitAction()">
           <div class="row" style="margin-top: 2rem">
-            <div class="col-2">
+            <div class="col-1">
               <label class="">Code:</label>
             </div>
             <div class="col-4">
-              <input
-                type="number"
-                formControlName="code"
-                class="form-control"
-                placeholder="Code"
+              <input type="number" formControlName="code" class="form-control" placeholder="Code"
               />
             </div>
-            <div class="col-2"></div>
-            <div class="col-4">
-              <label class="">Add Department</label>
-              <select
+            <div class="col"></div>
+            <div class="col-2">
+              <label class="">Add Department:</label>
+            </div>
+            <div class="col-3">
+              <!-- <select
                 class="form-select"
                 formControlName="dept"
                 (change)="selectChangeHandler($event)"
@@ -28,29 +29,20 @@
                 <option value="HRDept">HRDept</option>
                 <option value="Designation">Manager</option>
                 <option value="Staff">Staff</option>
-              </select>
-            </div>
-          </div>
-          <div class="row" style="margin-top: 1rem">
-            <div class="col-2">
-              <label class="">Name:</label>
-            </div>
-            <div class="col-5">
+              </select> -->
               <input
                 type="text"
-                formControlName="name"
+                formControlName="dept"
                 class="form-control"
-                placeholder="Name"
+                placeholder="Enter department name"
               />
             </div>
-            <div class="col-5"></div>
           </div>
           <div class="row" style="margin-top: 1rem">
             <div class="col"></div>
             <div class="col">
               <button type="submit" class="btn btn btn-primary">Submit</button
-              >&nbsp;&nbsp;
-              <button type="button" class="btn btn btn-primary" (click)="print()">Report</button>
+              >
             </div>
             <div class="col"></div>
           </div>
@@ -58,103 +50,7 @@
         <br />
       </div>
     </div>
-    <div class="content" style="margin-top: 4rem">
-      <table
-        class="table table-bordered"
-        style="width: 75rem; float: right; margin: 0 auto; margin-top: 4rem"
-      >
-        <thead>
-          <tr>
-            <th scope="col">Code</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">Department</th>
-            <th scope="col" class="text-center no-print">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of empList">
-            <th scope="row">{{ item.code }}</th>
-            <!-- <th scope="row">{{ item.code }}</th> -->
-            <td>{{ item.name }}</td>
-            <td>{{ item.dept }}</td>
-  
-            <td class="text-center no-print">
-              <button
-                type="button"
-                class="btn btn-sm btn-primary"
-                (click)="openPopup(item)"
-              >
-                Edit</button
-              >&nbsp;&nbsp;
-  
-              <!-- <button class="btn btn-sm btn-danger" (click)="deleteAction(item)">
-                Delete
-              </button> -->
-              <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table><br>
-      <!-- <pagination-controls (pageChange)="p = $event" style="text-align: center;" class="no-print"></pagination-controls> -->
-    </div>
-  </div>
-  <div
-    class="modal"
     
-    tabindex="-1"
-    role="dialog"
-    [ngStyle]="{ display: displayStyle }"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Department</h5>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="editDepartmentForm"(ngSubmit)="updateMenu()">
-            <div class="row">
-              <div class="col-3">
-                <label class="required">Name</label>
-              </div>
-              <div class="col-9">
-                <input
-                  type="text"
-                  formControlName="name"
-                  class="form-control"
-                  placeholder="Name"
-                />
-              </div>
-            </div>
-            <br />
-            <div class="row">
-              <div class="col-3">
-                <label class="required">Department</label>
-              </div>
-              <div class="col-9">
-                <select
-                  class="form-select"
-                  formControlName="dept"
-                  (change)="selectChangeHandler($event)"
-                >
-                  <option [selected]="true">Select Department</option>
-                  <option>HRDept</option>
-                  <option>Manager</option>
-                  <option>Staff</option>
-                </select>
-              </div>
-            </div>
-            <br />
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" (click)="closePopup()">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
+
   

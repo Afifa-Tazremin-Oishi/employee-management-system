@@ -1,9 +1,13 @@
-<div class="w3-container" style="margin-top: 3rem;">
-    <div class="card">
+<div class="w3-container w3-teal no-print">
+  <h1>Designation Entry</h1>
+  
+</div> 
+<div class="w3-container" style="margin-top: 1rem;">
+    <div class="card no-print">
       <div class="card-body">
-        <h5>Designation Entry</h5>
+        <!-- <h5>Designation Entry</h5> -->
         <form [formGroup]="addDesignation" (ngSubmit)="submitAction()">
-          <div class="row" style="margin-top: 2rem">
+          <div class="row" style="margin-top: 1rem">
             <div class="col-2">
               <label class="">Code:</label>
             </div>
@@ -32,7 +36,7 @@
           </div>
           <div class="row" style="margin-top: 1rem">
             <div class="col-2">
-              <label class="">Short Desig:</label>
+              <label class="">Short Designation:</label>
             </div>
             <div class="col-5">
               <input
@@ -47,7 +51,7 @@
           <div class="row" style="margin-top: 3rem">
             <div class="col text-center">
               <button type="submit" class="btn btn-success">Save</button>&nbsp;&nbsp;
-              <button type="button" class="btn btn-info">Report</button>
+              <button type="button" class="btn btn-info" (click)="print()">Report</button>
           
               <!-- <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger">Delete</button> -->
@@ -70,31 +74,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
+        <tr *ngFor="let item of desigList">
+          <th scope="row">{{item.code}}</th>
+          <td>{{item.designation}}</td>
+          <td>{{item.sdesignation}}</td>
           <td class="text-center no-print">
-            <button type="button" class="btn btn-sm btn-primary" (click)="openPopup()">Edit</button>&nbsp;&nbsp;
-            <button  class="btn btn-sm btn-danger" >Delete</button>
+            <button type="button" class="btn btn-sm btn-primary" (click)="openPopup(item)">Edit</button>&nbsp;&nbsp;
+            <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)">Delete</button>
             </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td class="text-center no-print">
-            <button
-              type="button"
-              class="btn btn-sm btn-primary"
-              (click)="openPopup()"
-            >
-              Edit</button
-            >&nbsp;&nbsp;
-            <button  class="btn btn-sm btn-danger" >Delete</button>
-            </td>
-        </tr>
-        
       </tbody>
     </table><br>
   </div>
@@ -109,7 +97,7 @@
       <div class="modal-header">
         <h4 class="modal-title">Edit</h4>
       </div>
-      <form [formGroup]="editDesignation">
+      <form [formGroup]="editDesignation" (ngSubmit)="updateMenu()">
       <div class="modal-body">
         <div class="form-group">
           <label>Designation</label>
