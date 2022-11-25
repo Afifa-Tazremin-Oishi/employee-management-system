@@ -56,7 +56,11 @@ export class DesignationEntryComponent implements OnInit {
         Swal.fire('Success', 'Successfully Saved', 'success');
         this.addDesignation.reset();
         this.getAll();
-      })
+      },
+      (err: any) => {
+        Swal.fire('Error', err?.error?.message ?? 'Menu creation Failed. Something went wrong. Please try again later.', 'error');
+      }
+      )
     }else{
       Swal.fire('Error', 'Please Input Valid Data', 'error');
     }

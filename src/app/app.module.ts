@@ -11,6 +11,7 @@ import { DesignationEntryComponent } from './modules/designation-entry/designati
 import { EmployeInfoComponent } from './modules/employe-info/employe-info.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NavComponent } from './modules/nav/nav.component';
+import { DepartmentListComponent } from './modules/department-list/department-list.component';
 // import { DesignationServiceComponent } from './modules/designation-entry/designation.service/designation.service.component';
 // import { DesignationEntryFormComponent } from './modules/designation-entry-form/designation-entry-form.component';
 
@@ -22,6 +23,7 @@ import { NavComponent } from './modules/nav/nav.component';
     EmployeInfoComponent,
     DashboardComponent,
     NavComponent,
+    DepartmentListComponent,
     // DesignationServiceComponent,
     // DesignationEntryFormComponent
   ],

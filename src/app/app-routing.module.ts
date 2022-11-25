@@ -1,3 +1,4 @@
+import { DepartmentListComponent } from './modules/department-list/department-list.component';
 import { EmployeInfoComponent } from './modules/employe-info/employe-info.component';
 import { DesignationEntryComponent } from './modules/designation-entry/designation-entry.component';
 import { DepartmentEntryComponent } from './modules/department-entry/department-entry.component';
@@ -11,7 +12,11 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: '1',
+    path: 'dept-entry',
+    component: DepartmentEntryComponent
+  },
+  {
+    path: '1/dept-entry',
     component: DepartmentEntryComponent
   },
   {
@@ -21,6 +26,10 @@ const routes: Routes = [
   {
     path: '3',
     component: EmployeInfoComponent
+  },
+  {
+    path: '1',
+    component: DepartmentListComponent
   }
 ];
 
