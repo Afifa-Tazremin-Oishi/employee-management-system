@@ -55,6 +55,7 @@ export class DesignationEntryComponent implements OnInit {
         console.log(res);
         Swal.fire('Success', 'Successfully Saved', 'success');
         this.addDesignation.reset();
+        this.closePopup();
         this.getAll();
       },
       (err: any) => {
@@ -125,4 +126,5 @@ export class DesignationEntryComponent implements OnInit {
     window.print();
   }
 
+  
 }

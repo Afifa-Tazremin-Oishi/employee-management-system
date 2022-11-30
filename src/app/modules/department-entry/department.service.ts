@@ -18,6 +18,9 @@ export class DepartmentService {
  updateDept(requestBody: any) {
   return this.http.patch('http://localhost:8000/updateemployee', requestBody);
 }
+getMaxNo(){
+  return this.http.get('http://localhost:8000/maxdeptcode');
+}
 // deleteDept(requestBody: any){
 //   return this.http.delete('http://localhost:8000/deleteemployee', requestBody);
 // }

@@ -12,6 +12,9 @@ import { EmployeInfoComponent } from './modules/employe-info/employe-info.compon
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NavComponent } from './modules/nav/nav.component';
 import { DepartmentListComponent } from './modules/department-list/department-list.component';
+import { EditDesignationComponent } from './modules/edit-designation/edit-designation.component';
+import { EditDepartmentComponent } from './modules/edit-department/edit-department.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { DesignationServiceComponent } from './modules/designation-entry/designation.service/designation.service.component';
 // import { DesignationEntryFormComponent } from './modules/designation-entry-form/designation-entry-form.component';
 
@@ -24,6 +27,8 @@ import { DepartmentListComponent } from './modules/department-list/department-li
     DashboardComponent,
     NavComponent,
     DepartmentListComponent,
+    EditDesignationComponent,
+    EditDepartmentComponent,
     // DesignationServiceComponent,
     // DesignationEntryFormComponent
   ],
@@ -33,7 +38,8 @@ import { DepartmentListComponent } from './modules/department-list/department-li
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

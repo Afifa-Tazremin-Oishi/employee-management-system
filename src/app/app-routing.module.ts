@@ -1,3 +1,5 @@
+import { EditDesignationComponent } from './modules/edit-designation/edit-designation.component';
+import { EditDepartmentComponent } from './modules/edit-department/edit-department.component';
 import { DepartmentListComponent } from './modules/department-list/department-list.component';
 import { EmployeInfoComponent } from './modules/employe-info/employe-info.component';
 import { DesignationEntryComponent } from './modules/designation-entry/designation-entry.component';
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: '1',
     component: DepartmentListComponent
+  },
+  {
+    path: 'edit-department',
+    component: EditDepartmentComponent
+  },
+  {
+    path: 'edit-designation',
+    component: EditDesignationComponent
   }
 ];
 

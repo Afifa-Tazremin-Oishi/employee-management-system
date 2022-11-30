@@ -12,24 +12,13 @@
               <label class="">Code:</label>
             </div>
             <div class="col-4">
-              <input type="number" formControlName="code" class="form-control" placeholder="Code"
-              />
+              <label class="form-control readonly">{{lists.code}}</label>
             </div>
             <div class="col"></div>
             <div class="col-2">
               <label class="">Add Department:</label>
             </div>
             <div class="col-3">
-              <!-- <select
-                class="form-select"
-                formControlName="dept"
-                (change)="selectChangeHandler($event)"
-              >
-                <option [selected]="true">Select Department</option>
-                <option value="HRDept">HRDept</option>
-                <option value="Designation">Manager</option>
-                <option value="Staff">Staff</option>
-              </select> -->
               <input
                 type="text"
                 formControlName="dept"

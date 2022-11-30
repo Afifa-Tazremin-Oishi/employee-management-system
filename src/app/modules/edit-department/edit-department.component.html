@@ -1,0 +1,27 @@
+<div class="w3-container w3-teal no-print">
+    <h1>Edit Department</h1>
+  </div> 
+  <div class="w3-container" style="margin-top: 4rem;">
+      <div class="card no-print" style="width: 40rem;">
+        <div class="card-body">
+            <form [formGroup]="editDepartmentForm"(ngSubmit)="updateMenu()">
+                <div class="row">
+                  <div class="col-3">
+                    <label class="required">Department:</label>
+                  </div>
+                  <div class="col-6">
+                    <input
+                    type="text"
+                    formControlName="dept"
+                    class="form-control"
+                    placeholder="Enter department name"
+                  />
+                  </div>
+                  <div class="col-3">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

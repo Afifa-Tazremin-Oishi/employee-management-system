@@ -1,0 +1,26 @@
+<div class="w3-container w3-teal no-print">
+    <h1>Edit Designation</h1>
+  </div> 
+  <div class="w3-container" style="margin-top: 4rem;">
+      <div class="card no-print" style="width: 43rem;">
+        <div class="card-body">
+            <form [formGroup]="editDesignation" (ngSubmit)="updateMenu()">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" class="form-control" formControlName="designation">
+                  </div>
+                  <div class="form-group">
+                    <label>Short Designation</label>
+                    <input type="text" class="form-control" formControlName="sdesignation">
+                  </div>
+                </div>
+                <br>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <br>
+              </form>
+        </div>
+    </div>
+</div>

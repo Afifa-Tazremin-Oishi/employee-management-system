@@ -73,7 +73,6 @@ export class DepartmentListComponent implements OnInit {
 
   getAll() {
     this.deptService.getAlldept().subscribe((res: any) => {
-
       console.log('hi',res);
       this.empList = res.payload.output;
     })
