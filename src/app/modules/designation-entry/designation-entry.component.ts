@@ -1,8 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { DesignationService } from './designation.service';
 
 @Component({
@@ -15,6 +13,7 @@ export class DesignationEntryComponent implements OnInit {
   displayStyle = "none";
   desigList: any;
   data: any = null;
+  lists: any;
   
   openPopup(item: any) {
     this.displayStyle = "block";
@@ -31,8 +30,7 @@ export class DesignationEntryComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private desigService: DesignationService,
-    private http: HttpClient) { }
+    private desigService: DesignationService) { }
 
     addDesignation: FormGroup = this.fb.group({
       code: [null, [Validators.required]],
@@ -47,6 +45,7 @@ export class DesignationEntryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+    this.geMax();
   }
 
   submitAction(){
@@ -55,7 +54,7 @@ export class DesignationEntryComponent implements OnInit {
         console.log(res);
         Swal.fire('Success', 'Successfully Saved', 'success');
         this.addDesignation.reset();
-        this.closePopup();
+        window.location.reload();
         this.getAll();
       },
       (err: any) => {
@@ -110,6 +109,7 @@ export class DesignationEntryComponent implements OnInit {
           res => {
             console.log(res);
             Swal.fire('Success', 'Successfully Updated', 'success');
+            this.closePopup();
             this.getAll();
           },
           (err: any) => {
@@ -125,6 +125,13 @@ export class DesignationEntryComponent implements OnInit {
   print(){
     window.print();
   }
+  geMax() {
+    this.desigService.getMaxNo().subscribe((res: any) => {
+      this.lists = res?.payload;
+      this.addDesignation.patchValue({ code: res?.payload?.code });
 
+    });
+    return true;
+  }
   
 }

@@ -12,7 +12,9 @@
               <label class="">Code:</label>
             </div>
             <div class="col-4">
-              <label class="form-control readonly">{{lists.code}}</label>
+              <label class="form-control readonly">
+                {{lists?.code}}
+              </label>
             </div>
             <div class="col"></div>
             <div class="col-2">
@@ -30,7 +32,7 @@
           <div class="row" style="margin-top: 1rem">
             <div class="col"></div>
             <div class="col">
-              <button type="submit" class="btn btn btn-primary">Submit</button
+              <button type="submit" class="btn btn btn-primary" [disabled]="addDepartmentForm.invalid">Submit</button
               >
             </div>
             <div class="col"></div>

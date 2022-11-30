@@ -17,7 +17,7 @@ export class DepartmentEntryComponent implements OnInit {
   lists: any
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private action: DepartmentService,
     private router: Router) { }
 
@@ -55,12 +55,14 @@ export class DepartmentEntryComponent implements OnInit {
     console.log(event.target.value);
   }
 
-  geAll(){
+  geAll() {
     this.action.getMaxNo().subscribe((res: any) => {
-      console.log(res.payload);
-      this.lists = res.payload;
+      this.lists = res?.payload;
+      this.addDepartmentForm.patchValue({ code: res?.payload?.code });
+
     });
+    return true;
   }
 
-  
+
 }

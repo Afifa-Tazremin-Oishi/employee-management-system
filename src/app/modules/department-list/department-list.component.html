@@ -10,8 +10,8 @@
     Add Department
   </button>
   <table class="table table-bordered" style="margin-top: 1rem">
-    <thead>
-      <tr>
+    <thead >
+      <tr class="table-dark">
         <th scope="col">Code</th>
         <th scope="col">Department Name</th>
         <th scope="col" class="text-center no-print">Action</th>
@@ -22,13 +22,12 @@
         <th scope="row">{{ item.code }}</th>
         <td>{{ item.dept }}</td>
         <td class="text-center no-print">
-          <button type="button" class="btn btn-sm btn-primary" routerLink="../edit-department">Edit</button>
-            &nbsp;&nbsp;
+          <button type="button" class="btn btn-sm btn-primary" (click)="openPopup(item)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;
           <button
             class="btn btn-sm btn-danger"
             (click)="deleteAction(item.code)"
           >
-            Delete
+          <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
         </td>
       </tr>
@@ -43,7 +42,7 @@
   <!-- <pagination-controls (pageChange)="p = $event" style="text-align: center;" class="no-print"></pagination-controls> -->
 </div>
 
-<!-- <div
+<div
   class="modal"
   
   tabindex="-1"
@@ -54,6 +53,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Edit Department</h5>
+        <i class="fa fa-times" aria-hidden="true" (click)="closePopup()" style="cursor: pointer;"></i>
       </div>
       <div class="modal-body">
         <form [formGroup]="editDepartmentForm"(ngSubmit)="updateMenu()">
@@ -76,27 +76,6 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="closePopup()">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Department</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      
     </div>
   </div>
 </div>

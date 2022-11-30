@@ -12,12 +12,9 @@
               <label class="">Code:</label>
             </div>
             <div class="col-4">
-              <input
-                type="number"
-                formControlName="code"
-                class="form-control"
-                placeholder="Code"
-              />
+              <label class="form-control readonly">
+                {{lists?.code}}
+              </label>
             </div>
           </div>
           <div class="row" style="margin-top: 1rem">
@@ -65,8 +62,8 @@
       class="table table-bordered"
       style="width: 75rem; float: right; margin-top: 4rem"
     >
-      <thead>
-        <tr>
+      <thead class="thead-dark">
+        <tr class="thead-dark">
           <th scope="col">Code</th>
           <th scope="col">Designation</th>
           <th scope="col">Short Desig</th>
@@ -79,8 +76,8 @@
           <td>{{item.designation}}</td>
           <td>{{item.sdesignation}}</td>
           <td class="text-center no-print">
-            <button type="button" class="btn btn-sm btn-primary" (click)="openPopup(item)">Edit</button>&nbsp;&nbsp;
-            <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)">Delete</button>
+            <button type="button" class="btn btn-sm btn-primary" (click)="openPopup(item)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;&nbsp;
+            <button  class="btn btn-sm btn-danger" (click)="deleteAction(item.code)"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </td>
         </tr>
       </tbody>
@@ -96,6 +93,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Edit</h4>
+        <i class="fa fa-times" aria-hidden="true" (click)="closePopup()" style="cursor: pointer;"></i>
       </div>
       <form [formGroup]="editDesignation" (ngSubmit)="updateMenu()">
       <div class="modal-body">
@@ -113,12 +111,6 @@
       </div>
       <br>
     </form>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" 
-                (click)="closePopup()">
-          Close
-        </button>
-      </div>
     </div>
   </div>
 </div>

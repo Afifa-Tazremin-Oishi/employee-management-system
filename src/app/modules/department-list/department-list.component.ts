@@ -32,6 +32,7 @@ export class DepartmentListComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private deptService: DepartmentService,
+    
     ) { }
 
   ngOnInit(): void {
@@ -52,6 +53,7 @@ export class DepartmentListComponent implements OnInit {
           res => {
             console.log(res);
             Swal.fire('Success', 'Successfully Updated', 'success');
+            this.closePopup()
             this.getAll();
           },
           (err: any) => {

@@ -30,4 +30,9 @@ export class DesignationService {
     };
     return this.http.delete('http://localhost:8000/deletedesigntion', headerOption2);
   }
+
+  getMaxNo(){
+    return this.http.get('http://localhost:8000/maxdesigcode');
+  }
+
 }
